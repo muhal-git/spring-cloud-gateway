@@ -1,3 +1,11 @@
 spring:
   application:
     name: scg-gateway
+server:
+  error:
+    whitelabel:
+      enabled: false
+    include-stacktrace: never
+logging:
+  level:
+    '[org.springframework.cloud.gateway]': TRACE
