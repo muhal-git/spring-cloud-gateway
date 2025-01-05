@@ -11,6 +11,8 @@ spring:
           - Path=/dns-resolver/**
           filters:
           - StripPrefix=1
+          - AddRequestHeader=X-Gateway-Header, Header-Value
+          - AddRequestParameter=gatewayParam, gatewayValue
 server:
   error:
     whitelabel:
