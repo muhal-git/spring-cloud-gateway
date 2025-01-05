@@ -1,6 +1,16 @@
 spring:
   application:
     name: scg-gateway
+  cloud:
+    gateway:
+      mvc:
+        routes:
+        - id: dns-service
+          uri: https://didactic-space-guide-6w6757pwg6jhrjv6-8080.app.github.dev/
+          predicates:
+          - Path=/dns-resolver/**
+          filters:
+          - StripPrefix=1
 server:
   error:
     whitelabel:
